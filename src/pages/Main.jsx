@@ -10,7 +10,6 @@ import {
   Typography,
   CardContent,
   Grid,
-  Paper,
   IconButton,
 } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
@@ -61,7 +60,6 @@ const Main = () => {
   };
 
   useEffect(() => {
-    console.log("effect");
     if (currentComic == null) {
       dispatch(getcomic());
     }
@@ -82,8 +80,6 @@ const Main = () => {
             className={classes.content}
             container
             spacing={2}
-            maxWidth="sm"
-            container
             direction="row"
             justify="center"
             alignItems="center"
@@ -91,7 +87,7 @@ const Main = () => {
             <Grid item md={3}>
               <IconButton
                 onClick={() => nextComic(comicState.currentIndex - 1)}
-                disabled={comicState.currentIndex == 0}
+                disabled={comicState.currentIndex === 0}
                 variant="contained"
               >
                 <ArrowBackIosIcon />
